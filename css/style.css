@@ -1,0 +1,594 @@
+/* 
+   Apple Product History Fan Site
+   Mobile-first CSS with responsive breakpoints
+*/
+
+/* ---------- CSS Reset ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ---------- Accessibility ---------- */
+  .skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .skip a:focus {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  
+  /* ---------- Base Styles ---------- */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f7;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  a:hover, a:focus {
+    text-decoration: underline;
+    color: #004499;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-top: 1em;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1em;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    margin-bottom: 1em;
+  }
+  
+  button, .button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, .button:hover {
+    background-color: #004499;
+    text-decoration: none;
+  }
+  
+  /* ---------- Layout & Structure ---------- */
+  header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  
+  header .logo {
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  header .logo img {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  header h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid #e1e1e1;
+  }
+  
+  footer .footer-info {
+    margin-bottom: 1rem;
+  }
+  
+  .content-section {
+    margin-bottom: 2rem;
+  }
+  
+  /* ---------- Component Styles ---------- */
+  
+  /* Hero Sections */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+  
+  .hero .content-wrapper {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .hero .image-container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Product Timelines */
+  .product-timeline {
+    list-style: none;
+    margin: 1rem 0;
+    padding-left: 0;
+  }
+  
+  .product-timeline > li {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #0066cc;
+  }
+  
+  .product-timeline > li > strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .product-timeline > li > ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .product-timeline > li > ul > li {
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Figures & Captions */
+  figure {
+    margin: 1.5rem 0;
+  }
+  
+  figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  /* Video Container */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Gallery Teaser */
+  .gallery-teaser {
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .gallery-preview {
+    margin: 1rem 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  /* Comments & Forum */
+  .comment {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .comment-author {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  
+  .comment-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
+  .comments-feed {
+    margin-top: 1rem;
+  }
+  
+  /* Form Styles */
+  form {
+    max-width: 100%;
+    margin: 2rem 0;
+  }
+  
+  fieldset {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  .char-counter {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  .char-counter.warning {
+    color: #ff3b30;
+    font-weight: bold;
+  }
+  
+  .form-actions {
+    margin-top: 1.5rem;
+  }
+  
+  /* ---------- Page Specific Styles ---------- */
+  
+  /* Index Page */
+  .index-page .hero {
+    min-height: 400px;
+    justify-content: center;
+  }
+  
+  /* iMac Page */
+  .imac-page .content-section:nth-child(odd) {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  /* iPhone Page */
+  .iphone-page .content-section {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 2rem;
+  }
+  
+  .iphone-page .content-section:last-of-type {
+    border-bottom: none;
+  }
+  
+  /* iPod Page */
+  .ipod-page .content-section h2 {
+    color: #0066cc;
+  }
+  
+  /* Forum Page */
+  .forum-page .content-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* ---------- Media Queries ---------- */
+  
+  /* Tablet (768px and up) */
+  @media screen and (min-width: 768px) {
+    /* Layout adjustments */
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    
+    header .logo {
+      margin-bottom: 0;
+    }
+    
+    header h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    
+    nav {
+      margin-left: auto;
+    }
+    
+    nav ul {
+      gap: 1.5rem;
+    }
+    
+    main {
+      padding: 2rem;
+    }
+    
+    /* Two column layout */
+    .content-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .content-section > p,
+    .content-section > h2 {
+      grid-column: 1 / -1;
+    }
+    
+    /* Hero section horizontal */
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+    }
+    
+    .hero .content-wrapper {
+      flex: 1;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    
+    .hero .image-container {
+      flex: 1;
+    }
+    
+    /* Forum layout */
+    .forum-page main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    
+    .forum-page .content-section {
+      display: block;
+    }
+    
+    /* Timeline layout */
+    .product-timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .product-timeline > li {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Desktop (1024px and up) */
+  @media screen and (min-width: 1024px) {
+    /* Layout adjustments */
+    header .logo img {
+      max-width: 150px;
+    }
+    
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    /* Three column layout */
+    .content-section.grid-layout {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    /* Timeline as 3 columns */
+    .product-timeline {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    /* Main content with sidebar layout */
+    .with-sidebar {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 2rem;
+    }
+    
+    /* Gallery 3 column grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
+    /* Comments section layout */
+    .comments-feed {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
+    /* Enhanced navigation */
+    nav ul li a {
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    
+    nav ul li a:hover {
+      background-color: rgba(0, 102, 204, 0.1);
+    }
+    
+    /* Larger form layout */
+    form {
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    
+    /* Hero image prominence */
+    .hero .image-container {
+      max-width: 600px;
+    }
+    
+    /* Enhanced accessibility focus states */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+      outline: 3px solid rgba(0, 102, 204, 0.5);
+      outline-offset: 2px;
+    }
+  }
+  
+  /* Large Desktop (1440px and up) */
+  @media screen and (min-width: 1440px) {
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    main {
+      padding: 3rem;
+    }
+    
+    header {
+      padding: 1rem 3rem;
+    }
+    
+    .product-detail {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    body {
+      font-family: serif;
+      background: none;
+      color: black;
+    }
+    
+    header, nav, footer, .video-container, .gallery-teaser, .open-gallery, button {
+      display: none;
+    }
+    
+    main {
+      padding: 0;
+    }
+    
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    
+    .content-section {
+      page-break-inside: avoid;
+      margin-bottom: 1em;
+    }
+    
+    h1 {
+      font-size: 24pt;
+      margin-bottom: 1cm;
+    }
+    
+    h2 {
+      font-size: 18pt;
+      margin-top: 1cm;
+    }
+    
+    img {
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+  }
