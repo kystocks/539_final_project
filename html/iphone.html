@@ -12,23 +12,25 @@
     <div class="skip"><a href="#main-content">Skip to Main Content</a></div>
     
     <header>
-        <a href="index.html" class="logo">
-            <img src="../images/logo.png" alt="Apple History Fan Site Logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="imac.html">iMac</a></li>
-                <li><a href="ipod.html">iPod</a></li>
-                <li><a href="iphone.html">iPhone</a></li>
-                <li><a href="forum.html">Forum</a></li>
-            </ul>
-        </nav>
-        <h1>iPhone: The Device That Changed Everything</h1>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="../images/logo.png" alt="Apple History Fan Site Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="imac.html">iMac</a></li>
+                    <li><a href="ipod.html">iPod</a></li>
+                    <li><a href="iphone.html">iPhone</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                </ul>
+            </nav>
+            <h1>iPhone: The Device That Changed Everything</h1>
+        </div>
     </header>
     
     <main id="main-content">
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/placeholder" title="Original iPhone introduction by Steve Jobs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VQKMoT-6XSg?si=eze-WL4fFlummpAH" title="Original iPhone announcement by Steve Jobs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         
         <div class="content-section">
@@ -36,12 +38,12 @@
             <p>On January 9, 2007, Steve Jobs took the stage at Macworld and announced: "Today, Apple is going to reinvent the phone." He introduced three revolutionary products: a widescreen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet communicator. Then came the reveal—these weren't three separate devices but one: the iPhone. With its multi-touch interface, full web browser, and app ecosystem, the iPhone fundamentally redefined not just mobile phones but computing itself.</p>
             
             <figure class="gallery-preview">
-                <img src="../images/original-iphone-placeholder.jpg" alt="Original iPhone from 2007">
+                <img src="../images/iphone-1.webp" alt="Original iPhone from 2007">
                 <figcaption>The original iPhone (2007) featured a 3.5-inch touchscreen and introduced multi-touch to the mass market.</figcaption>
             </figure>
         </div>
         
-        <div class="content-section">
+        <div class="content-section timeline-section">
             <h2>iPhone Evolution Through the Years</h2>
             <ul class="product-timeline">
                 <li>
@@ -106,7 +108,7 @@
         <div class="content-section">
             <h2>The iOS Evolution</h2>
             <figure>
-                <img src="../images/ios-evolution-placeholder.jpg" alt="Evolution of iOS interfaces">
+                <img src="../images/ios-homescreens.jpg" alt="Evolution of iOS interfaces">
                 <figcaption>iOS has evolved from simple to sophisticated while maintaining usability</figcaption>
             </figure>
             <p>Initially called iPhone OS, the iPhone's operating system has undergone a remarkable evolution. The original iPhone didn't even support third-party apps—a feature added in iPhone OS 2 with the App Store launch in 2008. Over the years, iOS has introduced transformative features like multitasking, notification center, control center, and widgets. The visual design saw a dramatic shift with iOS 7 in 2013, moving from skeuomorphic designs to a flatter, more modern aesthetic. Each iOS version has expanded capabilities while maintaining the intuitive user experience that made the original iPhone revolutionary. Today's iOS includes sophisticated features like app privacy reports, focus modes, and deep integration with other Apple devices.</p>
@@ -115,7 +117,7 @@
         <div class="content-section">
             <h2>The App Revolution</h2>
             <figure>
-                <img src="../images/app-store-placeholder.jpg" alt="App Store interface showing popular apps">
+                <img src="../images/iphone-10-years.webp" alt="iPhone evolution over 10 years">
                 <figcaption>The App Store created an entire economy of mobile software development</figcaption>
             </figure>
             <p>When Steve Jobs initially resisted third-party apps, preferring web applications, few could have predicted the eventual impact of the App Store. Launched in 2008 with just 500 apps, it grew into a global marketplace with millions of applications that transformed countless industries. The app economy has created millions of jobs worldwide and generated hundreds of billions in revenue. Apps have changed how we communicate (WhatsApp, Instagram), how we travel (Uber, Google Maps), how we shop (Amazon, mobile banking), and even how we date (Tinder, Bumble). The iPhone's combination of powerful hardware, user-friendly interface, and robust development platform made it the perfect catalyst for this app revolution.</p>
@@ -130,19 +132,21 @@
             <h2>iPhone Gallery</h2>
             <p>Explore our collection of iPhone images showcasing each generation from 2007 to present day.</p>
             <div class="gallery-preview">
-                <img src="../images/iphone-gallery-placeholder.jpg" alt="Preview of iPhone models gallery">
+                <img src="../images/iphone-10-years.webp" alt="Preview of iPhone models gallery">
             </div>
             <button class="open-gallery" aria-label="Open iPhone image gallery">View Gallery</button>
         </div>
     </main>
     
     <footer>
-        <div class="footer-info">
-            <h3>About This Site</h3>
-            <p>This is a fan appreciation site with no affiliation to Apple Inc.</p>
-            <p>All product images and trademarks belong to their respective owners.</p>
+        <div class="container">
+            <div class="footer-info">
+                <h3>About This Site</h3>
+                <p>This is a fan appreciation site with no affiliation to Apple Inc.</p>
+                <p>All product images and trademarks belong to their respective owners.</p>
+            </div>
+            <p class="copyright">&copy; Kyle Stocksdale <span id="year"></span></p>
         </div>
-        <p class="copyright">&copy; Kyle Stocksdale <span id="year"></span></p>
     </footer>
     
     <script>
