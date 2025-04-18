@@ -148,13 +148,14 @@ header .container {
     height: auto;
   }
   
-  header h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    order: 3;
-  }
+header h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0.5rem auto;
+  padding: 0.5rem 0;
+  width: 100%;
+  max-width: 1200px;
+}
   
   nav ul {
     list-style: none;
