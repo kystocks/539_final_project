@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Fan Forum | Apple Product History</title>
+    <link rel="stylesheet" type="text/css" href="../css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+</head>
+<body class="forum-page">
+    <div class="skip"><a href="#main-content">Skip to Main Content</a></div>
+    
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="../images/logo.png" alt="Apple History Fan Site Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="imac.html">iMac</a></li>
+                    <li><a href="ipod.html">iPod</a></li>
+                    <li><a href="iphone.html">iPhone</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                </ul>
+            </nav>
+            <h1>Apple Fan Forum</h1>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <div class="content-section">
+            <h2>Share Your Apple Story</h2>
+            <p>What's your favorite Apple product or memory? Share it with other fans in 140 characters or less.</p>
+            
+            <form id="comment-form" aria-labelledby="form-heading">
+                <fieldset>
+                    <legend id="form-heading">Add Your Comment</legend>
+                    
+                    <div class="form-group">
+                        <label for="product">Product:</label>
+                        <select id="product" name="product" required>
+                            <option value="">Select a product</option>
+                            <option value="iMac">iMac</option>
+                            <option value="iPod">iPod</option>
+                            <option value="iPhone">iPhone</option>
+                            <option value="iPad">iPad</option>
+                            <option value="MacBook">MacBook</option>
+                            <option value="Apple Watch">Apple Watch</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Your comment (140 characters max):</label>
+                        <textarea id="comment" name="comment" rows="3" maxlength="140" aria-describedby="char-count" required></textarea>
+                        <div id="char-count" class="char-counter" aria-live="polite">140 characters remaining</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">Display name (optional):</label>
+                        <input type="text" id="username" name="username" placeholder="Anonymous">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" id="submit-comment">Post Comment</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        
+        <div class="content-section">
+            <h2>Recent Comments</h2>
+            <div id="comments-container" class="comments-feed" aria-live="polite">
+                <!-- Example comments - in a real implementation, these would be dynamically generated -->
+                <article class="comment">
+                    <h3>iPhone <span class="comment-author">by Anonymous</span></h3>
+                    <p>Got my first iPhone in 2008 and was blown away by the touchscreen. Changed how I thought about phones forever!</p>
+                    <footer class="comment-meta">Posted on April 9, 2025 at 2:45 PM</footer>
+                </article>
+                
+                <article class="comment">
+                    <h3>iPod <span class="comment-author">by Music Lover</span></h3>
+                    <p>Still have my original iPod Classic with the click wheel. 20,000 songs and it still works perfectly after all these years.</p>
+                    <footer class="comment-meta">Posted on April 8, 2025 at 11:23 AM</footer>
+                </article>
+                
+                <article class="comment">
+                    <h3>iMac G3 <span class="comment-author">by Anonymous</span></h3>
+                    <p>My Bondi Blue iMac was the first computer I ever owned. That startup sound still brings back memories!</p>
+                    <footer class="comment-meta">Posted on April 7, 2025 at 4:17 PM</footer>
+                </article>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <h3>About This Site</h3>
+                <p>This is a fan appreciation site with no affiliation to Apple Inc.</p>
+                <p>All product images and trademarks belong to their respective owners.</p>
+            </div>
+            <p class="copyright">&copy; Kyle Stocksdale <span id="year"></span></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+        
+        // Character counter for comment textarea
+        const commentField = document.getElementById('comment');
+        const charCounter = document.getElementById('char-count');
+        const maxLength = commentField.getAttribute('maxlength');
+        
+        commentField.addEventListener('input', function() {
+            const remaining = maxLength - this.value.length;
+            charCounter.textContent = remaining + ' characters remaining';
+            
+            // Add visual feedback when approaching limit
+            if (remaining <= 20) {
+                charCounter.classList.add('warning');
+            } else {
+                charCounter.classList.remove('warning');
+            }
+        });
+        
+        // Form submission handling (would connect to backend in real implementation)
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission
+            
+            // Get form values
+            const product = document.getElementById('product').value;
+            const comment = document.getElementById('comment').value;
+            let username = document.getElementById('username').value;
+            
+            // Use 'Anonymous' if no username provided
+            if (!username) {
+                username = 'Anonymous';
+            }
+            
+            // Get current date and time
+            const now = new Date();
+            const dateTimeString = now.toLocaleDateString() + ' at ' + 
+                                  now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            
+            // Create new comment element
+            const newComment = document.createElement('article');
+            newComment.className = 'comment';
+            newComment.innerHTML = `
+                <h3>${product} <span class="comment-author">by ${username}</span></h3>
+                <p>${comment}</p>
+                <footer class="comment-meta">Posted on ${dateTimeString}</footer>
+            `;
+            
+            // Add the new comment to the top of the comments container
+            const commentsContainer = document.getElementById('comments-container');
+            commentsContainer.insertBefore(newComment, commentsContainer.firstChild);
+            
+            // Reset the form
+            this.reset();
+            charCounter.textContent = maxLength + ' characters remaining';
+            charCounter.classList.remove('warning');
+            
+            // Focus back to product dropdown for next entry
+            document.getElementById('product').focus();
+        });
+    </script>
+</body>
+</html>
