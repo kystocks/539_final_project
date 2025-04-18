@@ -134,7 +134,7 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
   
@@ -153,6 +153,7 @@ header .container {
     font-size: 1.5rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    order: 3;
   }
   
   nav ul {
@@ -477,8 +478,9 @@ footer .container {
   
   header .container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 3rem;
   }
     
     header .logo {
@@ -491,7 +493,7 @@ footer .container {
     }
     
     nav {
-      margin-left: auto;
+      margin: 0;
     }
     
     nav ul {
