@@ -1,0 +1,261 @@
+/* 
+   Lightbox CSS for Apple Product History Site 
+   Provides styling for the image gallery lightbox component
+*/
+
+/* Lightbox container */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.lightbox.active {
+    opacity: 1;
+}
+
+/* Lightbox content wrapper */
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Image container */
+.lightbox-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Main image */
+.lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+/* Caption */
+.lightbox-caption {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.lightbox-close:hover, 
+.lightbox-close:focus {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* Navigation buttons */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 1001;
+}
+
+.lightbox-prev {
+    left: -60px;
+}
+
+.lightbox-next {
+    right: -60px;
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Thumbnail strip */
+.lightbox-thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    max-width: 90%;
+    overflow-x: auto;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+/* Individual thumbnails */
+.lightbox-thumbnail {
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    transition: border-color 0.2s ease;
+}
+
+.lightbox-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lightbox-thumbnail.active {
+    border-color: #0066cc;
+}
+
+.lightbox-thumbnail:hover,
+.lightbox-thumbnail:focus {
+    border-color: #fff;
+}
+
+/* Focus styling for accessibility */
+.lightbox:focus,
+.lightbox-close:focus,
+.lightbox-nav:focus,
+.lightbox-thumbnail:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+    }
+    
+    .lightbox-caption {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
+    
+    .lightbox-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .lightbox-content {
+        max-width: 80%;
+    }
+    
+    .lightbox-image {
+        max-height: 75vh;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for the lightbox */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.lightbox.active {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.lightbox:not(.active) {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
