@@ -139,105 +139,108 @@ function openGallery(event) {
  * Get gallery images based on product type
  */
 function getGalleryImages(productType) {
+    // Get the base path for URLs, handling both local and GitHub Pages deployments
+    const basePath = '/539_final_project';
+    
     // Define galleries for each product
     const galleries = {
         'imac': [
             {
-                src: '../images/imac-bondi-blue.jpeg',
+                src: basePath + '/images/imac-bondi-blue.jpeg',
                 alt: 'Original Bondi Blue iMac G3 from 1998',
                 caption: 'The original Bondi Blue iMac G3 (1998) featured a revolutionary all-in-one design.'
             },
             {
-                src: '../images/imac-five-flavors.jpg',
+                src: basePath + '/images/imac-five-flavors.jpg',
                 alt: 'Five flavors of the iMac G3',
                 caption: 'The iMac G3 "five flavors" lineup from 1999: Strawberry, Blueberry, Lime, Grape, and Tangerine.'
             },
             {
-                src: '../images/imac-slotload.jpg',
+                src: basePath + '/images/imac-slotload.jpg',
                 alt: 'Slot-loading iMac G3',
                 caption: 'The slot-loading iMac G3 models introduced in 1999 featured a more refined design.'
             },
             {
-                src: '../images/imac-g4.webp',
+                src: basePath + '/images/imac-g4.webp',
                 alt: 'iMac G4 "Sunflower" design',
                 caption: 'The iMac G4 "Sunflower" (2002-2004) featured a floating display on an adjustable arm.'
             },
             {
-                src: '../images/imacs-through-years.webp',
+                src: basePath + '/images/imacs-through-years.webp',
                 alt: 'Evolution of iMac designs through the years',
                 caption: 'The evolution of iMac designs from the original G3 to modern thin aluminum models.'
             },
             {
-                src: '../images/Apple-iMac-M4-hero.webp',
+                src: basePath + '/images/Apple-iMac-M4-hero.webp',
                 alt: 'Modern M-series iMac with colorful design',
                 caption: 'The latest M-series iMac returned to colorful designs reminiscent of the original iMac G3.'
             }
         ],
         'ipod': [
             {
-                src: '../images/ipod-og.jpg',
+                src: basePath + '/images/ipod-og.jpg',
                 alt: 'Original iPod with mechanical scroll wheel',
                 caption: 'The original iPod (2001) featured a mechanical scroll wheel and 5GB of storage.'
             },
             {
-                src: '../images/ipod-3.webp',
+                src: basePath + '/images/ipod-3.webp',
                 alt: 'Third generation iPod with touch wheel',
                 caption: 'The third generation iPod introduced the touch-sensitive wheel with separate buttons.'
             },
             {
-                src: '../images/ipod-4.webp',
+                src: basePath + '/images/ipod-4.webp',
                 alt: 'Fourth generation iPod with click wheel',
                 caption: 'The fourth generation iPod (2004) integrated buttons into the click wheel design.'
             },
             {
-                src: '../images/ipod-mini-1-2.webp',
+                src: basePath + '/images/ipod-mini-1-2.webp',
                 alt: 'iPod mini in multiple colors',
                 caption: 'The iPod mini (2004-2005) came in multiple anodized aluminum colors and introduced the click wheel.'
             },
             {
-                src: '../images/ipod-nano-2.webp',
+                src: basePath + '/images/ipod-nano-2.webp',
                 alt: 'Second generation iPod nano',
                 caption: 'The second generation iPod nano featured an aluminum case in multiple colors.'
             },
             {
-                src: '../images/ipod-nano-4-5.webp',
+                src: basePath + '/images/ipod-nano-4-5.webp',
                 alt: 'Fourth and fifth generation iPod nano',
                 caption: 'The fourth and fifth generation iPod nano returned to a vertical design with larger screens.'
             },
             {
-                src: '../images/ipod-shuffle-1.webp',
+                src: basePath + '/images/ipod-shuffle-1.webp',
                 alt: 'First generation iPod shuffle',
                 caption: 'The first iPod shuffle (2005) was designed like a USB stick with no screen.'
             },
             {
-                src: '../images/ipod-touch-1.webp',
+                src: basePath + '/images/ipod-touch-1.webp',
                 alt: 'First generation iPod touch',
                 caption: 'The first iPod touch (2007) featured an iPhone-like design with touchscreen.'
             },
             {
-                src: '../images/ipod-touch-6.webp',
+                src: basePath + '/images/ipod-touch-6.webp',
                 alt: 'Sixth generation iPod touch',
                 caption: 'The sixth generation iPod touch (2015) was one of the last iPod models before discontinuation.'
             },
             {
-                src: '../images/2007-iPod-lineup.jpg',
+                src: basePath + '/images/2007-iPod-lineup.jpg',
                 alt: 'Complete iPod lineup from 2007',
                 caption: 'The complete iPod lineup from 2007 showing all variations: shuffle, nano, classic, and touch.'
             }
         ],
         'iphone': [
             {
-                src: '../images/iphone-1.webp',
+                src: basePath + '/images/iphone-1.webp',
                 alt: 'Original iPhone from 2007',
                 caption: 'The original iPhone (2007) featured a 3.5-inch touchscreen and introduced multi-touch to the mass market.'
             },
             {
-                src: '../images/iphone-10-years.webp',
+                src: basePath + '/images/iphone-10-years.webp',
                 alt: 'iPhone evolution over 10 years',
                 caption: 'The evolution of iPhone designs over its first decade, from the original to the iPhone X.'
             },
             {
-                src: '../images/ios-homescreens.jpg',
+                src: basePath + '/images/ios-homescreens.jpg',
                 alt: 'Evolution of iOS home screen designs',
                 caption: 'The evolution of iOS home screen designs from the original iPhone OS to modern iOS versions.'
             }
