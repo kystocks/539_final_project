@@ -96,6 +96,13 @@ img {
   height: auto;
 }
 
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* 
   Typography hierarchy
   https://www.toptal.com/designers/typography/web-typography-infographic
@@ -328,6 +335,11 @@ footer .copyright {
 */
 figure {
   margin: 1.5rem 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 figcaption {
@@ -384,6 +396,10 @@ figcaption {
   margin: 1rem 0;
   overflow: hidden;
   border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -547,6 +563,16 @@ input, select, textarea {
   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
 */
 @media screen and (min-width: 768px) {
+  /* Ensure figures span the full width in the grid layout */
+  .content-section figure,
+  .content-section .gallery-preview {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   /* Header adjustments */
   header {
     padding: 1rem 2rem;
