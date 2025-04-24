@@ -1,6 +1,13 @@
 /**
  * Apple Product History Lightbox
  * A simple, accessible lightbox implementation for image galleries
+ * 
+ * References and inspirations:
+ * - W3Schools Lightbox Tutorial: https://www.w3schools.com/howto/howto_js_lightbox.asp
+ * - MDN Web Docs for Modal Dialogs: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
+ * - Smashing Magazine - Building Accessible Image Galleries: https://www.smashingmagazine.com/2022/03/accessible-filterable-image-galleries/
+ * - CSS-Tricks - JavaScript Image Gallery: https://css-tricks.com/snippets/javascript/javascript-image-gallery/
+ * - The A11y Project - Accessible Modals: https://www.a11yproject.com/posts/how-to-use-the-dialog-element/
  */
 
 document.addEventListener('DOMContentLoaded', function() {

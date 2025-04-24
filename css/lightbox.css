@@ -1,6 +1,14 @@
 /* 
    Lightbox CSS for Apple Product History Site 
    Provides styling for the image gallery lightbox component
+
+   References and inspirations:
+   - W3Schools Lightbox Tutorial: https://www.w3schools.com/howto/howto_js_lightbox.asp
+   - MDN Web Docs for Dialog Styling: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+   - CSS-Tricks Modal Tutorial: https://css-tricks.com/considerations-styling-modal/
+   - A11y Style Guide: https://a11y-style-guide.com/style-guide/
+   - Accessible Modal Dialogs: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+   - Web Accessibility Initiative (WAI): https://www.w3.org/WAI/tutorials/
 */
 
 /* Lightbox container */
